@@ -4,6 +4,7 @@ import { Grid, Header, Button } from "semantic-ui-react";
 
 import Category from "../components/Category";
 import Pagination from "../components/Pagination";
+import AddCategoryForm from "../components/AddCategoryForm";
 
 import Context from "../config/context";
 
@@ -54,7 +55,7 @@ export default function Categories() {
         </Grid.Column>
         <Grid.Column />
         <Grid.Column>
-          //
+          <AddCategoryForm />
         </Grid.Column>
       </Grid.Row>
       <Grid.Row>{views}</Grid.Row>

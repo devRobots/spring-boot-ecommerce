@@ -2,11 +2,16 @@ import React from "react";
 import { Card, Image } from "semantic-ui-react";
 
 export default function Product(props) {
+  console.log(props.product.pictures);
+
+  const pic = props.product.pictures
+    ? props.product.pictures[0]
+    : "https://react.semantic-ui.com/images/avatar/large/matthew.png";
   return (
     <div>
       <Card>
         <Image
-          src="https://react.semantic-ui.com/images/avatar/large/matthew.png"
+          src={pic}
           wrapped
           ui={false}
         />

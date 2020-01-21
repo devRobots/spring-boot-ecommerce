@@ -13,7 +13,8 @@ import {
   GET_USER,
   POST_CATEGORY,
   GET_CATEGORIES,
-  GET_PRODUCTS
+  GET_PRODUCTS,
+  POST_PRODUCTS
 } from "./values";
 
 const Context = props => {
@@ -26,28 +27,38 @@ const Context = props => {
   // Dispatch to execute actions
   const [state, dispatch] = useReducer(Reducer, initialState);
 
-  // functions
+  // POST Methods
   const addUser = async user => {
     const res = await axiosClient.post("/users/add", user);
 
     dispatch({
       type: POST_USER,
+      payload: user
+    });
+  };
+  const addCategory = async category => {
+    const res = await axiosClient.post("/categories/add", category);
+    
+    dispatch({
+      type: POST_CATEGORY,
       payload: res.data
     });
   };
+  const addProduct = async product => {
+    const res = await axiosClient.post("/products/add", product);
+
+    dispatch({
+      type: POST_PRODUCTS,
+      payload: res.data
+    });
+  };
+  
+  // GET Methods
   const getUser = async () => {
     const res = await axiosClient.get("/users/get");
 
     dispatch({
       type: GET_USER,
-      payload: res.data
-    });
-  };
-  const addCategory = async category => {
-    const res = await axiosClient.post("/categories/add", category);
-
-    dispatch({
-      type: POST_CATEGORY,
       payload: res.data
     });
   };
@@ -76,8 +87,10 @@ const Context = props => {
         products: state.products,
         addUser,
         addCategory,
-        getProducts,
-        getCategories
+        addProduct,
+        getUser,
+        getCategories,
+        getProducts
       }}
     >
       {props.children}

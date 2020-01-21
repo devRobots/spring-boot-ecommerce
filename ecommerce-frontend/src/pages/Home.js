@@ -4,10 +4,7 @@ import {
   Container,
   Header,
   Button,
-  Image,
-  Grid,
-  Segment,
-  Divider
+  Image
 } from "semantic-ui-react";
 
 export default function Home() {
@@ -25,18 +22,6 @@ export default function Home() {
         A simple eCommerce Application made with Spring Boot and React for
         PerfilTIC.com
       </Header>
-      <Segment>
-        <Grid columns={2}>
-          <Grid.Column>
-            <Button primary>Categories</Button>
-          </Grid.Column>
-          <Grid.Column>
-            <Button primary>Products</Button>
-          </Grid.Column>
-        </Grid>
-
-        <Divider vertical>And</Divider>
-      </Segment>
     </Container>
   );
 }

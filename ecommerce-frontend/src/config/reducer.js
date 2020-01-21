@@ -1,4 +1,4 @@
-import { POST_CATEGORY, GET_CATEGORIES, GET_PRODUCTS, POST_USER } from "./values";
+import { POST_CATEGORY, GET_CATEGORIES, GET_PRODUCTS, POST_USER, POST_PRODUCTS } from "./values";
 
 export default (state, action) => {
   switch (action.type) {
@@ -12,6 +12,11 @@ export default (state, action) => {
       return {
         ...state,
         categories: action.payload
+      };
+    case POST_PRODUCTS:
+      return {
+        ...state,
+        products: action.payload
       };
     case GET_PRODUCTS:
       return {

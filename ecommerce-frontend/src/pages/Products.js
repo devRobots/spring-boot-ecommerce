@@ -4,6 +4,7 @@ import { Grid, Header, Button } from "semantic-ui-react";
 
 import Product from "../components/Product";
 import Pagination from "../components/Pagination";
+import AddProductForm from "../components/AddProductForm";
 
 import Context from "../config/context";
 
@@ -55,7 +56,7 @@ export default function Products() {
         </Grid.Column>
         <Grid.Column />
         <Grid.Column>
-          //
+          <AddProductForm />
         </Grid.Column>
       </Grid.Row>
       <Grid.Row>{views}</Grid.Row>
