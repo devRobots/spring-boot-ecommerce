@@ -45,11 +45,12 @@ public class UserResource {
 	/**
 	 * Gets user.
 	 *
+	 * @param email
 	 * @return user if exists
 	 */
 	@GetMapping(value = "/get")
-	public User get(@RequestParam("id") int id) {
-		return userRepository.findById(id).get();
+	public User get(@RequestParam("email") String email) {
+		return userRepository.findById(email).get();
 	}
 	/**
 	 * Persist user.
@@ -65,12 +66,12 @@ public class UserResource {
 	/**
 	 * Delete user.
 	 *
-	 * @param id the id
+	 * @param email the email
 	 * @return all users
 	 */
 	@DeleteMapping(value = "/delete")
-	public List<User> delete(@PathVariable int id) {
-		userRepository.deleteById(id);
+	public List<User> delete(@PathVariable String email) {
+		userRepository.deleteById(email);
 		return userRepository.findAll();
 	}
 	/**
@@ -80,10 +81,10 @@ public class UserResource {
 	 * @param user  the user
 	 * @return all users
 	 */
-	@PutMapping(value = "/put/{id}")
-	public List<User> put(@PathVariable int id, @RequestBody User user) {
-		if (userRepository.existsById(id)) {
-			userRepository.deleteById(id);
+	@PutMapping(value = "/put/{email}")
+	public List<User> put(@PathVariable String email, @RequestBody User user) {
+		if (userRepository.existsById(email)) {
+			userRepository.deleteById(email);
 			userRepository.save(user);
 		}
 		
