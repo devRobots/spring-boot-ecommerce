@@ -1,29 +1,39 @@
 package com.devrobot.springbootecommerce.model;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
 public class User {
-	private long id;
-	private String username;
+	@Id
+	@Column(name = "email", unique = true, nullable = false)
+	private String email;
+	@Column(name = "password", nullable = false)
 	private String password;
+	@Column(name = "name")
+	private String name;
 	
 	public User() {
 	}
-	public User(long id, String username, String password) {
-		this.id = id;
-		this.username = username;
+	public User(String email, String password, String name) {
+		super();
+		this.email = email;
 		this.password = password;
+		this.name = name;
 	}
 
-	public long getId() {
-		return id;
+	public String getEmail() {
+		return email;
 	}
-	public void setId(long id) {
-		this.id = id;
+	public void setEmail(String email) {
+		this.email = email;
 	}
-	public String getUsername() {
-		return username;
+	public String getName() {
+		return name;
 	}
-	public void setUsername(String username) {
-		this.username = username;
+	public void setName(String name) {
+		this.name = name;
 	}
 	public String getPassword() {
 		return password;

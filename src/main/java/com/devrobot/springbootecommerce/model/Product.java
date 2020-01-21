@@ -1,18 +1,35 @@
 package com.devrobot.springbootecommerce.model;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+
+@Entity
 public class Product {
-	private long id;
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name = "id", unique = true, nullable = false)
+	private Integer id;
+	@Column(name = "name", nullable = false)
 	private String name;
+	@Column(name = "description")
 	private String description;
+	@Column(name = "weight")
 	private double weight;
+	@Column(name = "price", nullable = false)
 	private double price;
+	@Column(name = "pictures")
 	private String[] pictures;
+	@ManyToOne
 	private Category category;
 	
 	public Product() {
 	}
 	
-	public Product(long id, String name, String description, double weight, double price, String[] pictures,
+	public Product(Integer id, String name, String description, double weight, double price, String[] pictures,
 			Category category) {
 		this.id = id;
 		this.name = name;
@@ -24,10 +41,10 @@ public class Product {
 	}
 
 
-	public long getId() {
+	public Integer getId() {
 		return id;
 	}
-	public void setId(long id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 	public String getName() {
