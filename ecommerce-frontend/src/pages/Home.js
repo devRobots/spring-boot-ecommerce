@@ -28,10 +28,10 @@ export default function Home() {
       <Segment>
         <Grid columns={2}>
           <Grid.Column>
-            <Button>Categories</Button>
+            <Button primary>Categories</Button>
           </Grid.Column>
           <Grid.Column>
-            <Button>Products</Button>
+            <Button primary>Products</Button>
           </Grid.Column>
         </Grid>
 

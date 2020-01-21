@@ -6,7 +6,7 @@ import { Button, Form } from "semantic-ui-react";
 export default function SigninForm() {
   return (
     <div>
-      <Form>
+      <Form onSubmit="">
         <Form.Field>
           <label>Email</label>
           <input placeholder="yourmail@mail.com" type="email" />
@@ -15,7 +15,7 @@ export default function SigninForm() {
           <label>Password</label>
           <input placeholder="*****" type="password" />
         </Form.Field>
-        <Button type="submit" fluid>
+        <Button primary type="submit" fluid>
           Sign in
         </Button>
       </Form>

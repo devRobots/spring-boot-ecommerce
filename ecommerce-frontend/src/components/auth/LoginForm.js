@@ -15,7 +15,7 @@ export default function LoginForm() {
           <label>Password</label>
           <input placeholder="*****" type="password" />
         </Form.Field>
-        <Button type="submit" fluid>
+        <Button primary type="submit" fluid>
           Login
         </Button>
       </Form>
