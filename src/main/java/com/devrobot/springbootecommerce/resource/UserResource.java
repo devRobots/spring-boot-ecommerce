@@ -4,10 +4,14 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.devrobot.springbootecommerce.model.User;
@@ -38,16 +42,51 @@ public class UserResource {
 	public List<User> getAll() {
 		return userRepository.findAll();
 	}
-	
+	/**
+	 * Gets user.
+	 *
+	 * @return user if exists
+	 */
+	@GetMapping(value = "/get")
+	public User get(@RequestParam("id") int id) {
+		return userRepository.findById(id).get();
+	}
 	/**
 	 * Persist user.
 	 *
 	 * @param user the user
-	 * @return the list
+	 * @return all users
 	 */
 	@PostMapping(value = "/add")
 	public List<User> persist(@RequestBody final User user) {
 		userRepository.save(user);
 		return userRepository.findAll(); 
+	}
+	/**
+	 * Delete user.
+	 *
+	 * @param id the id
+	 * @return all users
+	 */
+	@DeleteMapping(value = "/delete")
+	public List<User> delete(@PathVariable int id) {
+		userRepository.deleteById(id);
+		return userRepository.findAll();
+	}
+	/**
+	 * Put user.
+	 *
+	 * @param id 	the id
+	 * @param user  the user
+	 * @return all users
+	 */
+	@PutMapping(value = "/put/{id}")
+	public List<User> put(@PathVariable int id, @RequestBody User user) {
+		if (userRepository.existsById(id)) {
+			userRepository.deleteById(id);
+			userRepository.save(user);
+		}
+		
+		return userRepository.findAll();
 	}
 }

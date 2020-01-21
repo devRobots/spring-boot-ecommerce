@@ -22,10 +22,6 @@ public class User {
 	@Column(name = "password", nullable = false)
 	private String password;
 
-	/** The name. */
-	@Column(name = "name")
-	private String name;
-
 	/**
 	 * Empty Constructor. Instantiates a new user.
 	 */
@@ -39,11 +35,10 @@ public class User {
 	 * @param password the password
 	 * @param name     the name
 	 */
-	public User(String email, String password, String name) {
+	public User(String email, String password) {
 		super();
 		this.email = email;
 		this.password = password;
-		this.name = name;
 	}
 
 	/**
@@ -80,23 +75,5 @@ public class User {
 	 */
 	public void setPassword(String password) {
 		this.password = password;
-	}
-
-	/**
-	 * Gets the name.
-	 *
-	 * @return the name
-	 */
-	public String getName() {
-		return name;
-	}
-
-	/**
-	 * Sets the name.
-	 *
-	 * @param name the new name
-	 */
-	public void setName(String name) {
-		this.name = name;
 	}
 }
