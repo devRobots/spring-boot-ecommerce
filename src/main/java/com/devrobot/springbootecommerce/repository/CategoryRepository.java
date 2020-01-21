@@ -4,6 +4,12 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import com.devrobot.springbootecommerce.model.Category;
 
-public interface CategoryRepository extends JpaRepository<Category, Integer>{
+/**
+ * The Interface CategoryRepository.
+ *
+ * @author devrobot
+ * @version 1.0
+ */
+public interface CategoryRepository extends JpaRepository<Category, Integer> {
 
 }

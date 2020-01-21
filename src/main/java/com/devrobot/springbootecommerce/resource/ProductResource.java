@@ -14,22 +14,40 @@ import com.devrobot.springbootecommerce.repository.ProductRepository;
 
 import com.devrobot.springbootecommerce.model.Product;
 
+/**
+ * The Class ProductResource.
+ *
+ * @author devrobot
+ * @version 1.0
+ */
 @RestController
 @RequestMapping("/api/products")
 @CrossOrigin("*")
 public class ProductResource {
-	
+
+	/** The product repository. */
 	@Autowired
 	private ProductRepository productRepository;
-	
+
+	/**
+	 * Gets all products.
+	 *
+	 * @return all products
+	 */
 	@GetMapping(value = "/all")
 	public List<Product> getAll() {
 		return productRepository.findAll();
 	}
-	
+
+	/**
+	 * Persist product.
+	 *
+	 * @param product the product
+	 * @return the list
+	 */
 	@PostMapping(value = "/add")
 	public List<Product> persist(@RequestBody final Product product) {
 		productRepository.save(product);
-		return productRepository.findAll(); 
+		return productRepository.findAll();
 	}
 }
