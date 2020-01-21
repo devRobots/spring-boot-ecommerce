@@ -1,5 +1,6 @@
 import React from "react";
-import { Card, Image } from "semantic-ui-react";
+import { Card, Image, Button } from "semantic-ui-react";
+import Detail from "./Detail";
 
 export default function Product(props) {
   console.log(props.product.pictures);
@@ -23,6 +24,9 @@ export default function Product(props) {
           <Card.Description>
             {props.product.description}
           </Card.Description>
+        </Card.Content>
+        <Card.Content extra>
+          <Detail product={props.product} />
         </Card.Content>
       </Card>
     </div>
