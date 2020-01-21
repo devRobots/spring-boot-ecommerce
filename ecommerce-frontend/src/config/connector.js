@@ -33,7 +33,7 @@ const Context = props => {
 
     dispatch({
       type: POST_USER,
-      payload: user
+      payload: res.data
     });
   };
   const addCategory = async category => {
