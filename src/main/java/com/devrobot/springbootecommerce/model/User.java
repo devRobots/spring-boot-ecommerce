@@ -13,14 +13,21 @@ import javax.persistence.Id;
 @Entity
 public class User {
 
-	/** The email. */
+	/** The id. */
 	@Id
-	@Column(name = "email", unique = true, nullable = false)
+	@Column(unique = true, nullable = false)
+	private String username;
+
+	/** The email. */
+	@Column(unique = true, nullable = false)
 	private String email;
 
 	/** The password. */
-	@Column(name = "password", nullable = false)
+	@Column(nullable = false)
 	private String password;
+
+	/** The is admin. */
+	private boolean isAdmin;
 
 	/**
 	 * Empty Constructor. Instantiates a new user.
@@ -31,14 +38,34 @@ public class User {
 	/**
 	 * Instantiates a new user.
 	 *
+	 * @param username the username
 	 * @param email    the email
 	 * @param password the password
-	 * @param name     the name
+	 * @param isAdmin  the is admin
 	 */
-	public User(String email, String password) {
-		super();
+	public User(String username, String email, String password, boolean isAdmin) {
+		this.username = username;
 		this.email = email;
 		this.password = password;
+		this.isAdmin = isAdmin;
+	}
+
+	/**
+	 * Gets the username.
+	 *
+	 * @return the username
+	 */
+	public String getUsername() {
+		return username;
+	}
+
+	/**
+	 * Sets the username.
+	 *
+	 * @param username the new username
+	 */
+	public void setUsername(String username) {
+		this.username = username;
 	}
 
 	/**
@@ -75,5 +102,22 @@ public class User {
 	 */
 	public void setPassword(String password) {
 		this.password = password;
+	}
+	/**
+	 * Checks if is admin.
+	 *
+	 * @return true, if is admin
+	 */
+	public boolean isAdmin() {
+		return isAdmin;
+	}
+	
+	/**
+	 * Sets the admin.
+	 *
+	 * @param isAdmin the new admin
+	 */
+	public void setAdmin(boolean isAdmin) {
+		this.isAdmin = isAdmin;
 	}
 }

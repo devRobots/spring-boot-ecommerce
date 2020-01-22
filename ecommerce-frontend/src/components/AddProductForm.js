@@ -52,7 +52,7 @@ export default function AddProductForm() {
   };
 
   return (
-    <Modal trigger={<Button primary>Add new Product</Button>}>
+    <Modal trigger={<Button primary fluid>Add new Product</Button>}>
       <Modal.Header>Add new Product</Modal.Header>
       <Modal.Content>
         <Form onSubmit={handleSubmit}>

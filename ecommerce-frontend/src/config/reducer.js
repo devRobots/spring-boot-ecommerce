@@ -1,9 +1,15 @@
-import { POST_CATEGORY, GET_CATEGORIES, GET_PRODUCTS, POST_USER, POST_PRODUCTS } from "./values";
+import {
+  POST_CATEGORY,
+  GET_CATEGORIES,
+  GET_PRODUCTS,
+  POST_USER,
+  POST_PRODUCTS,
+  GET_USER
+} from "./values";
 
 export default (state, action) => {
   switch (action.type) {
     case POST_USER:
-      localStorage.setItem("user", JSON.stringify(action.payload));
       return {
         ...state,
         user: action.payload
@@ -17,6 +23,11 @@ export default (state, action) => {
       return {
         ...state,
         products: action.payload
+      };
+    case GET_USER:
+      return {
+        ...state,
+        user: action.payload
       };
     case GET_PRODUCTS:
       return {

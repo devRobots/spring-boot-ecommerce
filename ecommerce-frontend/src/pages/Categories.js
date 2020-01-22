@@ -1,6 +1,6 @@
 import React, { useContext, useState, useEffect } from "react";
 
-import { Grid, Header, Button } from "semantic-ui-react";
+import { Grid, Segment, Card } from "semantic-ui-react";
 
 import Category from "../components/Category";
 import Pagination from "../components/Pagination";
@@ -10,7 +10,7 @@ import Context from "../config/context";
 
 export default function Categories() {
   const context = useContext(Context);
-  const { categories, getCategories } = context;
+  const { user, categories, getCategories } = context;
 
   const [currentPage, setCurrentPage] = useState(1);
   const [cardsPerPage, setCardsPerPage] = useState(9);
@@ -27,15 +27,16 @@ export default function Categories() {
     indexOfLastCategory
   );
 
-  const views = categories ? (
-    currentCategories.map(category => (
-      <Grid.Column key={category.id}>
-        <Category category={category} />
-      </Grid.Column>
-    ))
-  ) : (
-    <Header>Nothing here!</Header>
-  );
+  const views =
+    categories.length > 0 ? (
+      currentCategories.map(category => <Category category={category} />)
+    ) : (
+      <Card>
+        <Card.Content>
+          <h2>Nothing here!</h2>
+        </Card.Content>
+      </Card>
+    );
 
   const paginate = pageNumber => setCurrentPage(pageNumber);
 
@@ -47,19 +48,27 @@ export default function Categories() {
         paginate={paginate}
       />
     ) : null;
+
+  
+  const add = user? (user.is_admin ? <AddCategoryForm /> : null) : null;
+
   return (
-    <Grid columns={3}>
-      <Grid.Row className="page-title">
-        <Grid.Column>
-          <h1>Recent Categories</h1>
-        </Grid.Column>
-        <Grid.Column />
-        <Grid.Column>
-          <AddCategoryForm />
-        </Grid.Column>
-      </Grid.Row>
-      <Grid.Row>{views}</Grid.Row>
-      <Grid.Row centered>{pagination}</Grid.Row>
-    </Grid>
+    <div>
+      <Segment>
+        <Grid>
+          <Grid.Column floated="left" width={5}>
+            <h1>Recent Categories</h1>
+          </Grid.Column>
+          <Grid.Column floated="right" width={5}>
+            {add}
+          </Grid.Column>
+        </Grid>
+      </Segment>
+      <Card.Group fluid itemsPerRow="3">
+        {views}
+      </Card.Group>
+      <br />
+      <center>{pagination}</center>
+    </div>
   );
 }

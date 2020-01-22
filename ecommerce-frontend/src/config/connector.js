@@ -31,6 +31,8 @@ const Context = props => {
   const addUser = async user => {
     const res = await axiosClient.post("/users/add", user);
 
+    localStorage.setItem("user", JSON.stringify(res.data));
+
     dispatch({
       type: POST_USER,
       payload: res.data
@@ -38,7 +40,7 @@ const Context = props => {
   };
   const addCategory = async category => {
     const res = await axiosClient.post("/categories/add", category);
-    
+
     dispatch({
       type: POST_CATEGORY,
       payload: res.data
@@ -52,10 +54,15 @@ const Context = props => {
       payload: res.data
     });
   };
-  
+
   // GET Methods
-  const getUser = async () => {
-    const res = await axiosClient.get("/users/get");
+  const getUser = async user => {
+    const res = await axiosClient.get("/users/" + user.username);
+
+    if (res.data.password === user.password) {
+    }
+    console.log(JSON.stringify(user));
+    localStorage.setItem("user", JSON.stringify(user));
 
     dispatch({
       type: GET_USER,

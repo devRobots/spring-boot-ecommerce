@@ -1,15 +1,29 @@
-import React from "react";
+import React, {useContext} from "react";
 import { Card, Image, Button } from "semantic-ui-react";
+
 import Detail from "./Detail";
 
+import Context from "../config/context";
+
 export default function Product(props) {
+  const context = useContext(Context);
+  const { user, addUser } = context;
+
+
+
   console.log(props.product.pictures);
 
   const pic = props.product.pictures
     ? props.product.pictures[0]
     : "https://react.semantic-ui.com/images/avatar/large/matthew.png";
+  
+  const extra = user ? (
+    <Card.Content extra>
+      <Detail product={props.product} />
+    </Card.Content>
+  ) : null;
+  
   return (
-    <div>
       <Card>
         <Image
           src={pic}
@@ -25,10 +39,7 @@ export default function Product(props) {
             {props.product.description}
           </Card.Description>
         </Card.Content>
-        <Card.Content extra>
-          <Detail product={props.product} />
-        </Card.Content>
+        {extra}
       </Card>
-    </div>
   );
 }

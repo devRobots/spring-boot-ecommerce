@@ -1,13 +1,23 @@
-import React from "react";
+import React, { useContext } from "react";
 
-import {
-  Container,
-  Header,
-  Button,
-  Image
-} from "semantic-ui-react";
+import { Container, Header, Image, Label, Button } from "semantic-ui-react";
+
+import Context from "../config/context";
 
 export default function Home() {
+  const context = useContext(Context);
+  const { user } = context;
+
+  console.log(user);
+
+  const greeting = user ? (
+    <div>
+      <Label size="massive" color="teal">
+        Welcome, {user.email}
+      </Label>
+    </div>
+  ) : null;
+
   return (
     <Container textAlign="center">
       <Image
@@ -22,6 +32,7 @@ export default function Home() {
         A simple eCommerce Application made with Spring Boot and React for
         PerfilTIC.com
       </Header>
+      {greeting}
     </Container>
   );
 }

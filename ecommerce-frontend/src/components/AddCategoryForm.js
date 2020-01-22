@@ -24,7 +24,7 @@ export default function AddCategoryForm() {
   };
 
   return (
-    <Modal trigger={<Button primary>Add new Category</Button>}>
+    <Modal trigger={<Button fluid primary>Add new Category</Button>}>
       <Modal.Header>Add new Category</Modal.Header>
       <Modal.Content>
         <Form onSubmit={handleSubmit}>

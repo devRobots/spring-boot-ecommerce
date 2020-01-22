@@ -3,29 +3,62 @@ import React, { useContext, useState } from "react";
 import { Menu } from "semantic-ui-react";
 import { Link } from "react-router-dom";
 
-import UserContext from "../config/context";
+import Context from "../config/context";
 
 export default function Navbar() {
-  const userContext = useContext(UserContext);
-  const { user } = userContext;
-  const pathname = window.location.pathname;
+  const context = useContext(Context);
+  const { user } = context;
 
-  const path = pathname === "/" ? "home" : pathname.substr(1);
+  const path = "home";
   const [activeItem, setActiveItem] = useState(path);
 
   const handleItemClick = (e, { name }) => setActiveItem(name);
 
-  const menuBar = user ? (
-    // Logged in
-    <Menu pointing secondary size="massive" color="teal">
-      <Menu.Item name={user.username} active as={Link} to="/" />
+  console.log(user);
 
-      <Menu.Menu position="right">
-        <Menu.Item name="logout" />
-      </Menu.Menu>
-    </Menu>
+  const shopper = user ? (
+    !user.admin ? (
+      <Menu.Item
+        name="shopping cart"
+        active={activeItem === "shopping cart"}
+        onClick={handleItemClick}
+        as={Link}
+        to="/shopping_cart"
+      />
+    ) : null
+  ) : null;
+
+  const userInfo = user ? (
+    <Menu.Menu position="right">
+      {shopper}
+      <Menu.Item
+        name="logout"
+        active={activeItem === "logout"}
+        onClick={handleItemClick}
+        as={Link}
+        to="/"
+      />
+    </Menu.Menu>
   ) : (
-    // Guest
+    <Menu.Menu position="right">
+      <Menu.Item
+        name="login"
+        active={activeItem === "login"}
+        onClick={handleItemClick}
+        as={Link}
+        to="/login"
+      />
+      <Menu.Item
+        name="sign in"
+        active={activeItem === "sign in"}
+        onClick={handleItemClick}
+        userState
+        as={Link}
+        to="/signin"
+      />
+    </Menu.Menu>
+  );
+  const menuBar = (
     <Menu pointing secondary size="massive" color="teal">
       <Menu.Item
         name="home"
@@ -48,26 +81,8 @@ export default function Navbar() {
         as={Link}
         to="/products"
       />
-
-      <Menu.Menu position="right">
-        <Menu.Item
-          name="login"
-          active={activeItem === "login"}
-          onClick={handleItemClick}
-          as={Link}
-          to="/login"
-        />
-        <Menu.Item
-          name="sign in"
-          active={activeItem === "sign in"}
-          onClick={handleItemClick}
-          userState
-          as={Link}
-          to="/signin"
-        />
-      </Menu.Menu>
+      {userInfo}
     </Menu>
   );
-
   return menuBar;
 }
