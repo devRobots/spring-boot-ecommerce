@@ -1,0 +1,1 @@
+{"version":3,"sources":["calendar/locale/mk_MK.jsx"],"names":["mk_MK"],"mappings":";;;;;;;AAAA;;;;eACeA,iB","sourcesContent":["import mk_MK from '../../date-picker/locale/mk_MK';\nexport default mk_MK;\n"],"file":"mk_MK.js"}
