@@ -56,6 +56,7 @@
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
 		</plugins>
+	<finalName>spring-boot-ecommerce</finalName>
 	</build>
 
 </project>
