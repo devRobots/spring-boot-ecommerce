@@ -1,3 +1,5 @@
+export const GET_CURRENCY = "GET_CURRENCY";
+
 // POST Method Tags
 export const POST_USER = "POST_USUARIO";
 export const POST_CATEGORY = "POST_CATEGORY";

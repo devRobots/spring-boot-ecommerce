@@ -49,7 +49,7 @@ export default function Products() {
       />
     ) : null;
 
-  const add = user ? user.is_admin ? <AddProductForm /> : null : null;
+  const add = user ? user.admin ? <AddProductForm /> : null : null;
 
   return (
     <div>

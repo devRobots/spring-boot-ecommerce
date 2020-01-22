@@ -1,7 +1,7 @@
 import React, { useContext, useState } from "react";
 
 import "semantic-ui-css/semantic.min.css";
-import { Grid, Card, Header, Form, Button } from "semantic-ui-react";
+import { Card, Header, Form, Button } from "semantic-ui-react";
 
 import Context from "../config/context";
 import { Redirect } from "react-router-dom";
@@ -54,7 +54,7 @@ export default function Login() {
             onChange={handleChange2}
             value={picture.value}
           />
-          <Button primary fluid type="submit">
+          <Button color="teal" fluid type="submit">
             Sign in
           </Button>
         </Form>

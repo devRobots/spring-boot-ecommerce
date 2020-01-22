@@ -4,11 +4,17 @@ import {
   GET_PRODUCTS,
   POST_USER,
   POST_PRODUCTS,
-  GET_USER
+  GET_USER,
+  GET_CURRENCY
 } from "./values";
 
 export default (state, action) => {
   switch (action.type) {
+    case GET_CURRENCY:
+      return {
+        ...state,
+        currency: action.payload
+      };
     case POST_USER:
       return {
         ...state,

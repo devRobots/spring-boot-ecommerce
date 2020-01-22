@@ -56,7 +56,7 @@ export default function Signin() {
             onChange={handleChange2}
             value={picture.value}
           />
-          <Button primary fluid type="submit">
+          <Button color="teal" fluid type="submit">
             Sign in
           </Button>
         </Form>

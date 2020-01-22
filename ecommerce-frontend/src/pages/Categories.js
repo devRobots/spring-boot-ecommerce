@@ -49,8 +49,7 @@ export default function Categories() {
       />
     ) : null;
 
-  
-  const add = user? (user.is_admin ? <AddCategoryForm /> : null) : null;
+  const add = user ? user.admin ? <AddCategoryForm /> : null : null;
 
   return (
     <div>

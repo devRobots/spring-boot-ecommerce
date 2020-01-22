@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 
-import { Container, Header, Image, Label, Button } from "semantic-ui-react";
+import { Container, Header, Image, Label } from "semantic-ui-react";
 
 import Context from "../config/context";
 
@@ -8,15 +8,19 @@ export default function Home() {
   const context = useContext(Context);
   const { user } = context;
 
-  console.log(user);
-
   const greeting = user ? (
     <div>
       <Label size="massive" color="teal">
         Welcome, {user.email}
       </Label>
     </div>
-  ) : null;
+  ) : (
+    <div>
+      <Label basic size="large" color="red" pointing prompt>
+        You need to login to go shopping
+      </Label>
+    </div>
+  );
 
   return (
     <Container textAlign="center">

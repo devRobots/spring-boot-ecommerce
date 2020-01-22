@@ -44,15 +44,23 @@ export default function AddProductForm() {
       description: description.value,
       category_id: parseInt(category.value),
       price: parseFloat(price.value),
-      weight: parseFloat(weight.value), 
-      pictures: pictures.value
+      weight: parseFloat(weight.value),
+      picture1: pictures[0],
+      picture2: pictures[1],
+      picture3: pictures[2]
     };
 
     addProduct(product);
   };
 
   return (
-    <Modal trigger={<Button primary fluid>Add new Product</Button>}>
+    <Modal
+      trigger={
+        <Button primary fluid>
+          Add new Product
+        </Button>
+      }
+    >
       <Modal.Header>Add new Product</Modal.Header>
       <Modal.Content>
         <Form onSubmit={handleSubmit}>

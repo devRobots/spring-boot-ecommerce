@@ -39,8 +39,16 @@ public class Product {
 	private double price;
 
 	/** The pictures. */
-	@Column(name = "pictures")
-	private String[] pictures;
+	@Column(name = "picture1")
+	private String picture1;
+
+	/** The pictures. */
+	@Column(name = "picture2")
+	private String picture2;
+
+	/** The pictures. */
+	@Column(name = "picture3")
+	private String picture3;
 
 	/** The category. */
 	@ManyToOne
@@ -60,17 +68,22 @@ public class Product {
 	 * @param description the description
 	 * @param weight      the weight
 	 * @param price       the price
-	 * @param pictures    the pictures
+	 * @param picture1    the picture 1
+	 * @param picture2    the picture 2
+	 * @param picture3    the picture 3
 	 * @param category    the category
 	 */
-	public Product(Integer id, String name, String description, double weight, double price, String[] pictures,
-			Category category) {
+	public Product(Integer id, String name, String description, double weight, double price, String picture1,
+			String picture2, String picture3, Category category) {
+		super();
 		this.id = id;
 		this.name = name;
 		this.description = description;
 		this.weight = weight;
 		this.price = price;
-		this.pictures = pictures;
+		this.picture1 = picture1;
+		this.picture2 = picture2;
+		this.picture3 = picture3;
 		this.category = category;
 	}
 
@@ -129,21 +142,57 @@ public class Product {
 	}
 
 	/**
-	 * Gets the pictures.
+	 * Gets the picture 1.
 	 *
-	 * @return the pictures
+	 * @return the picture 1
 	 */
-	public String[] getPictures() {
-		return pictures;
+	public String getPicture1() {
+		return picture1;
 	}
 
 	/**
-	 * Sets the pictures.
+	 * Sets the picture 1.
 	 *
-	 * @param pictures the new pictures
+	 * @param picture1 the new picture 1
 	 */
-	public void setPictures(String[] pictures) {
-		this.pictures = pictures;
+	public void setPicture1(String picture1) {
+		this.picture1 = picture1;
+	}
+
+	/**
+	 * Gets the picture 2.
+	 *
+	 * @return the picture 2
+	 */
+	public String getPicture2() {
+		return picture2;
+	}
+
+	/**
+	 * Sets the picture 2.
+	 *
+	 * @param picture2 the new picture 2
+	 */
+	public void setPicture2(String picture2) {
+		this.picture2 = picture2;
+	}
+
+	/**
+	 * Gets the picture 3.
+	 *
+	 * @return the picture 3
+	 */
+	public String getPicture3() {
+		return picture3;
+	}
+
+	/**
+	 * Sets the picture 3.
+	 *
+	 * @param picture3 the new picture 3
+	 */
+	public void setPicture3(String picture3) {
+		this.picture3 = picture3;
 	}
 
 	/**

@@ -14,23 +14,8 @@ export default function Navbar() {
 
   const handleItemClick = (e, { name }) => setActiveItem(name);
 
-  console.log(user);
-
-  const shopper = user ? (
-    !user.admin ? (
-      <Menu.Item
-        name="shopping cart"
-        active={activeItem === "shopping cart"}
-        onClick={handleItemClick}
-        as={Link}
-        to="/shopping_cart"
-      />
-    ) : null
-  ) : null;
-
   const userInfo = user ? (
     <Menu.Menu position="right">
-      {shopper}
       <Menu.Item
         name="logout"
         active={activeItem === "logout"}
