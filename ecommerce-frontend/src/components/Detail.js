@@ -16,7 +16,7 @@ export default function Detail(props) {
   const context = useContext(Context);
   const { currency, getCurrency } = context;
 
-  while (currency === null) {
+  if (currency === null) {
     getCurrency();
   }
 
