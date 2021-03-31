@@ -1,0 +1,35 @@
+version: '3'
+
+services:
+
+  myapp-mysql:
+    image: mysql:8.0
+    environment:
+      - MYSQL_ROOT_PASSWORD=123456
+      - MYSQL_DATABASE=ecommerce
+      - MYSQL_USER=ecommerce
+      - MYSQL_PASSWORD=123456
+    ports:
+      - 3306:3306
+    networks: 
+      - ecommerce
+
+  myapp-backend:
+    image: ecommerce-backend
+    restart: on-failure
+    depends_on:
+      - myapp-mysql
+    ports:
+      - 8080:8080
+    networks: 
+      - ecommerce
+    environment:
+      - DATABASE_HOST=myapp-mysql:3306
+      - DATABASE_USER=ecommerce
+      - DATABASE_PASSWORD=123456
+      - DATABASE_NAME=ecommerce
+      - DATABASE_PORT=3306
+
+networks: 
+  ecommerce:
+    driver: bridge
