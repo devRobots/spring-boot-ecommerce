@@ -33,7 +33,7 @@ export default function Categories() {
     ) : (
       <Card>
         <Card.Content>
-          <h2>Nothing here!</h2>
+          <h2>Vazio</h2>
         </Card.Content>
       </Card>
     );
@@ -56,7 +56,7 @@ export default function Categories() {
       <Segment>
         <Grid>
           <Grid.Column floated="left" width={5}>
-            <h1>Recent Categories</h1>
+            <h1>Categorias Recentes</h1>
           </Grid.Column>
           <Grid.Column floated="right" width={5}>
             {add}

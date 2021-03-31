@@ -4,12 +4,6 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
-/**
- * The Class User.
- *
- * @author devrobot
- * @version 1.0
- */
 @Entity
 public class User {
 

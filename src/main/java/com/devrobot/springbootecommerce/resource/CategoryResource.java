@@ -17,12 +17,6 @@ import org.springframework.web.bind.annotation.RestController;
 import com.devrobot.springbootecommerce.model.Category;
 import com.devrobot.springbootecommerce.repository.CategoryRepository;
 
-/**
- * The Class CategoryResource.
- *
- * @author devrobot
- * @version 1.0
- */
 @RestController
 @RequestMapping("/api/categories")
 @CrossOrigin("*")

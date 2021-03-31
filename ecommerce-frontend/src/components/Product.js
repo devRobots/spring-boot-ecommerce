@@ -23,7 +23,7 @@ export default function Product(props) {
     <Card>
       <Image src={pic} wrapped ui={false} />
       <Label color="teal" size="large" attached="top left">
-        Comida
+        Oferta
       </Label>
       <Card.Content>
         <Card.Header>

@@ -17,12 +17,6 @@ import org.springframework.web.bind.annotation.RestController;
 import com.devrobot.springbootecommerce.model.User;
 import com.devrobot.springbootecommerce.repository.UserRepository;
 
-/**
- * The Class UserResource.
- *
- * @author devrobot
- * @version 1.0
- */
 @RestController
 @RequestMapping("/api/users")
 @CrossOrigin("*")

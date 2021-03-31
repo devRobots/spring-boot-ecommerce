@@ -53,14 +53,14 @@ export default function Navbar() {
         to="/"
       />
       <Menu.Item
-        name="categories"
+        name="Categorias"
         active={activeItem === "categories"}
         onClick={handleItemClick}
         as={Link}
         to="/categories"
       />
       <Menu.Item
-        name="products"
+        name="Produtos"
         active={activeItem === "products"}
         onClick={handleItemClick}
         as={Link}

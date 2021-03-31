@@ -17,7 +17,7 @@ export default function Home() {
   ) : (
     <div>
       <Label basic size="large" color="red" pointing prompt>
-        You need to login to go shopping
+        Você precisa logar para começar a comprar!
       </Label>
     </div>
   );
@@ -25,16 +25,15 @@ export default function Home() {
   return (
     <Container textAlign="center">
       <Image
-        src="http://www.perfiltic.com/img/logo.png"
+        src="https://images-na.ssl-images-amazon.com/images/I/51J6cQ63OJL.png"
         size="large"
         centered
       />
       <Header as="h1" color="teal">
-        eCommerce Application
+        5DVP
       </Header>
       <Header as="h3">
-        A simple eCommerce Application made with Spring Boot and React for
-        PerfilTIC.com
+        Trabalho de conclusão da disciplina de Microsservices Architecture
       </Header>
       {greeting}
     </Container>

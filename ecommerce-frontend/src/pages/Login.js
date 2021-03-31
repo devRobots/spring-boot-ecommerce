@@ -37,7 +37,7 @@ export default function Login() {
   ) : (
     <Card fluid>
       <Card.Content>
-        <Header textAlign="center">¡Hello again!</Header>
+        <Header textAlign="center">Login</Header>
         <Form onSubmit={handleSubmit}>
           <Form.Input
             name="name"
@@ -55,7 +55,7 @@ export default function Login() {
             value={picture.value}
           />
           <Button color="teal" fluid type="submit">
-            Sign in
+            Login
           </Button>
         </Form>
       </Card.Content>

@@ -18,12 +18,6 @@ import com.devrobot.springbootecommerce.repository.ProductRepository;
 
 import com.devrobot.springbootecommerce.model.Product;
 
-/**
- * The Class ProductResource.
- *
- * @author devrobot
- * @version 1.0
- */
 @RestController
 @RequestMapping("/api/products")
 @CrossOrigin("*")

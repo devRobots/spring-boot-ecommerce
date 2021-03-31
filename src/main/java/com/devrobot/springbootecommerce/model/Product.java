@@ -7,12 +7,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
-/**
- * The Class Product.
- *
- * @author devrobot
- * @version 1.0
- */
 @Entity
 public class Product {
 
