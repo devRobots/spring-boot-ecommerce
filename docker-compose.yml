@@ -29,6 +29,16 @@ services:
       - DATABASE_PASSWORD=123456
       - DATABASE_NAME=ecommerce
       - DATABASE_PORT=3306
+      
+  myapp-frontend:
+    image: ecommerceapp
+    restart: on-failure
+    depends_on:
+      - myapp-backend
+    ports:
+      - 80:3000
+    networks: 
+      - ecommerce
 
 networks: 
   ecommerce:
