@@ -40,6 +40,13 @@ services:
     networks: 
       - ecommerce
 
+  myapp-client:
+    image: ecommerce-client
+    depends_on:
+      - myapp-backend
+    networks: 
+      - ecommerce
+
 networks: 
   ecommerce:
     driver: bridge
