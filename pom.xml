@@ -8,7 +8,7 @@
 		<version>2.2.3.RELEASE</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.devrobot</groupId>
+	<groupId>com.fiap5dvp</groupId>
 	<artifactId>spring-boot-ecommerce</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>spring-boot-ecommerce</name>

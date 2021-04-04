@@ -1,4 +1,4 @@
-package com.devrobot.springbootecommerce.model;
+package com.fiap5dvp.springbootecommerce.model;
 
 import java.util.List;
 

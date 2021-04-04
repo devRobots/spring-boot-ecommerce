@@ -1,4 +1,4 @@
-package com.devrobot.springbootecommerce.resource;
+package com.fiap5dvp.springbootecommerce.resource;
 
 import java.util.List;
 
@@ -14,8 +14,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.devrobot.springbootecommerce.model.Category;
-import com.devrobot.springbootecommerce.repository.CategoryRepository;
+import com.fiap5dvp.springbootecommerce.model.Category;
+import com.fiap5dvp.springbootecommerce.repository.CategoryRepository;
 
 @RestController
 @RequestMapping("/api/categories")

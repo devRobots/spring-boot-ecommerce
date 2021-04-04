@@ -1,4 +1,4 @@
-package com.devrobot.springbootecommerce;
+package com.fiap5dvp.springbootecommerce;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

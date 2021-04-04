@@ -1,4 +1,4 @@
-package com.devrobot.springbootecommerce.resource;
+package com.fiap5dvp.springbootecommerce.resource;
 
 import java.util.List;
 
@@ -14,8 +14,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.devrobot.springbootecommerce.model.User;
-import com.devrobot.springbootecommerce.repository.UserRepository;
+import com.fiap5dvp.springbootecommerce.model.User;
+import com.fiap5dvp.springbootecommerce.repository.UserRepository;
 
 @RestController
 @RequestMapping("/api/users")
