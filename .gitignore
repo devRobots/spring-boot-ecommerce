@@ -28,3 +28,6 @@ target/
 
 ### VS Code ###
 .vscode/
+
+ecommerce-frontend/node_modules
+logs
